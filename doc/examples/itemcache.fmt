@@ -1,0 +1,549 @@
+// itemcache.wdb format for version 6898 - 21/08/2007 - Ver
++signature
+WIDB
++version
+6898
++wdb
+// entry ID						1
+   u32
+// entryLength						2
+   u32
+// class						3
+   u32
+// subclass						4
+   u32
+// unknown						5
+   s32
+// name							6
+   s
+// name2						7
+   s
+// name3						8
+   s
+// name4						9
+   s
+// itemdisplayID					10
+   u32
+// qualityID						11
+   u32
+// typeBinFlag						12
+   b
+// buyPrice						13
+   u32
+// sellPrice						14
+   u32
+// inventorySlotID					15
+   u32
+// classBinFlag						16
+   b
+// raceBinFlag						17
+   b
+// itemLevel						18
+   u32
+// requiredLevel					19
+   u32
+// requiredSkillID					20
+   u32
+// requiredSkillLevel					21
+   u32
+// requiredSpellID					22
+   u32
+// requiredRankID					23
+   u32
+// requiredUnknownRank					24
+   u32
+// requiredFactionID					25
+   u32
+// requiredFactionLevel					26
+   u32
+// isUnique						27
+   b
+// stackAmount						28
+   u32
+// containerSlots					29
+   u32
+// stat1ID						30
+   s32
+// stat1Value						31
+   s32
+// stat2ID						32
+   s32
+// stat2Value						33
+   s32
+// stat3ID						34
+   s32
+// stat3Value						35
+   s32
+// stat4ID						36
+   s32
+// stat4Value						37
+   s32
+// stat5ID						38
+   s32
+// stat5Value						39
+   s32
+// stat6ID						40
+   s32
+// stat6Value						41
+   s32
+// stat7ID						42
+   s32
+// stat7Value						43
+   s32
+// stat8ID						44
+   s32
+// stat8Value						45
+   s32
+// stat9ID						46
+   s32
+// stat9Value						47
+   s32
+// stat10ID						48
+   s32
+// stat10Value						49
+   u32
+// damage1Min						50
+   f
+// damage1Max						51
+   f
+// damage1TypeID					52
+   u32
+// damage2Min						53
+   f
+// damage2Max						54
+   f
+// damage2TypeID					55
+   u32
+// damage3Min						56
+   f
+// damage3Max						57
+   f
+// damage3TypeID					58
+   u32
+// damage4Min						59
+   f
+// damage4Max						60
+   f
+// damage4TypeID					61
+   u32
+// damage5min						62
+   f
+// damage5Max						63
+   f
+// damage5TypeID					64
+   u32
+// resist physical (armour)				65
+   u32
+// resistHoly						66
+   u32
+// resistFire						67
+   u32
+// resistNature						68
+   u32
+// resistFrost						69
+   u32
+// resistShadow						70
+   u32
+// resistArcane						71
+   u32
+// weaponDelay						72
+   u32
+// ammoType						73
+   u32
+// rangeModifier					74
+   f
+
+// spell1ID						75
+   u32
+// spell1TriggerID					76
+   u32
+// spell1Charges					77
+   s32
+// spell1Cooldown					78
+   s32
+// spell1CategoryID					79
+   u32
+// spell1CategoryCooldown				80
+   s32
+
+// spell2ID						81
+   u32
+// spell2TriggerID					82
+   u32
+// spell2Charges					83
+   s32
+// spell2Cooldown					84
+   s32
+// spell2CategoryID					85
+   u32
+// spell2CategoryCooldown				86
+   s32
+
+// spell3ID						87
+   u32
+// spell3TriggerID					88
+   u32
+// spell3Charges					89
+   s32
+// spell3Cooldown					90
+   s32
+// spell3CategoryID					91
+   u32
+// spell3CategoryCooldown				92
+   s32
+
+// spell4ID						93
+   u32
+// spell4TriggerID					94
+   u32
+// spell4Charges					95
+   s32
+// spell4Cooldown					96
+   s32
+// spell4CategoryID					97
+   u32
+// spell4CategoryCooldown				98
+   s32
+
+// spell5ID						99
+   u32
+// spell5TriggerID					100
+   u32
+// spell5Charges					101
+   s32
+// spell5Cooldown					102
+   s32
+// spell5CategoryID					103
+   u32
+// spell5CategoryCooldown				104
+   s32
+
+// bondID						105
+   u32
+// description (seems usually empty.)			106
+   s
+// bookTextID						107
+   u32
+// bookPages						108
+   u32
+// bookStationaryID					109
+   u32
+// beginQuestID						110
+   u32
+// lockPickTalent					111
+   u32
+// materialID						112
+   s32
+// sheathID						113
+   u32
+// randompropertyID					114
+   u32
+// randompropertyID2 (maybe)				115
+   u32
+// blockValue						116
+   u32
+// itemSetID						117
+   u32
+// durabilityValue					118
+   u32
+// itemAreaID						119
+   u32
+// itemMapID						120
+   u32
+// bagFamily						121
+   u32
+// iRefID_TotemCategory					122
+   u32
+// socketColour1					123
+   u32
+// something to do with socketColour1?			124
+   u32
+// socketColour2					125
+   u32
+// something to do with socketColour2?			126
+   u32
+// socketColour3					127
+   u32
+// something to do with socketColour3?			128
+   u32
+// iRefID_SpellItemEnchantment				129
+   u32
+// iRefID_GemProperties					130
+   u32
+// iRefID_ItemExtendedCost				131
+   u32
+// disenchantSkillLevel					132
+   s32
+// armorDamageModifier					133
+   f
+
+// mysql-style output
+// says 'LanguageID' on the schema, but 'PageCount' on wiki for WDB column 108...
++sql
+INSERT INTO item_template (
+	entry,
+		class,
+			subclass,
+				unk0,
+					name,
+						displayid,
+							Quality,
+						Flags,
+					BuyCount,
+				BuyPrice,
+			SellPrice,
+		InventoryType,
+	AllowableClass,
+AllowableRace,
+	ItemLevel,
+		RequiredLevel,
+			RequiredSkill,
+				RequiredSkillRank,
+					requiredspell,
+						requiredhonorrank,
+							RequiredCityRank,
+								RequiredReputationFaction,
+							RequiredReputationRank,
+						maxcount,
+					stackable,
+				ContainerSlots,
+stat_type1,
+stat_value1,
+	stat_type2,
+	stat_value2,
+		stat_type3,
+		stat_value3,
+			stat_type4,
+			stat_value4,
+				stat_type5,
+				stat_value5,
+					stat_type6,
+					stat_value6,
+						stat_type7,
+						stat_value7,
+							stat_type8,
+							stat_value8,
+								stat_type9,
+								stat_value9,
+									stat_type10,
+									stat_value10,
+dmg_min1,
+dmg_max1,
+dmg_type1,
+	dmg_min2,
+	dmg_max2,
+	dmg_type2,
+		dmg_min3,
+		dmg_max3,
+		dmg_type3,
+			dmg_min4,
+			dmg_max4,
+			dmg_type4,
+				dmg_min5,
+				dmg_max5,
+				dmg_type5,
+armor,
+	holy_res,
+		fire_res,
+			nature_res,
+				frost_res,
+					shadow_res,
+						arcane_res,
+delay,
+	ammo_type,
+		RangedModRange,
+spellid_1,
+spelltrigger_1,
+spellcharges_1,
+spellcooldown_1,
+spellcategory_1,
+spellcategorycooldown_1,
+	spellid_2,
+	spelltrigger_2,
+	spellcharges_2,
+	spellcooldown_2,
+	spellcategory_2,
+	spellcategorycooldown_2,
+		spellid_3,
+		spelltrigger_3,
+		spellcharges_3,
+		spellcooldown_3,
+		spellcategory_3,
+		spellcategorycooldown_3,
+			spellid_4,
+			spelltrigger_4,
+			spellcharges_4,
+			spellcooldown_4,
+			spellcategory_4,
+			spellcategorycooldown_4,
+				spellid_5,
+				spelltrigger_5,
+				spellcharges_5,
+				spellcooldown_5,
+				spellcategory_5,
+				spellcategorycooldown_5,
+bonding,
+	description,
+		PageText,
+			LanguageID,
+				PageMaterial,
+					startquest,
+						lockid,
+							Material,
+								sheath,
+									RandomProperty,
+										RandomSuffix,
+									block,
+								itemset,
+							MaxDurability,
+	area,
+	map,
+		BagFamily,
+			TotemCategory,
+socketColor_1,
+socketContent_1,
+	socketColor_2,
+	socketContent_2,
+		socketColor_3,
+		socketContent_3,
+socketBonus,
+	GemProperties,
+		ExtendedCost,
+			RequiredDisenchantSkill,
+				ArmorDamageModifier,
+					ScriptName,
+						DisenchantID
+)VALUES(
+	$(1),
+		$(3),
+			$(4),
+				$(5),
+					'$(6)',
+						$(10),
+							$(11),
+						0x$(12),
+					1,
+				$(13),
+			$(14),
+		$(15),
+	0x$(16),
+0x$(17),
+	$(18),
+		$(19),
+			$(20),
+				$(21),
+					$(22),
+						$(23),
+							$(24),
+								$(25),
+							$(26),
+						0x$(27),
+					$(28),
+				$(29),
+$(30),
+$(31),
+	$(32),
+	$(33),
+		$(34),
+		$(35),
+			$(36),
+			$(37),
+				$(38),
+				$(39),
+					$(40),
+					$(41),
+						$(42),
+						$(43),
+							$(44),
+							$(45),
+								$(46),
+								$(47),
+									$(48),
+									$(49),
+$(50),
+$(51),
+$(52),
+	$(53),
+	$(54),
+	$(55),
+		$(56),
+		$(57),
+		$(58),
+			$(59),
+			$(60),
+			$(61),
+				$(62),
+				$(63),
+				$(64),
+$(65),
+	$(66),
+		$(67),
+			$(68),
+				$(69),
+					$(70),
+						$(71),
+$(72),
+	$(73),
+		$(74),
+$(75),
+$(76),
+$(77),
+$(78),
+$(79),
+$(80),
+	$(81),
+	$(82),
+	$(83),
+	$(84),
+	$(85),
+	$(86),
+		$(87),
+		$(88),
+		$(89),
+		$(90),
+		$(91),
+		$(92),
+			$(93),
+			$(94),
+			$(95),
+			$(96),
+			$(97),
+			$(98),
+				$(99),
+				$(100),
+				$(101),
+				$(102),
+				$(103),
+				$(104),
+$(105),
+	'$(106)',
+		$(107),
+			$(108),
+				$(109),
+					$(110),
+						$(111),
+							$(112),
+								$(113),
+									$(114),
+										$(115),
+									$(116),
+								$(117),
+							$(118),
+	$(119),
+	$(120),
+		$(121),
+			$(122),
+$(123),
+$(124),
+	$(125),
+	$(126),
+		$(127),
+		$(128),
+$(129),
+	$(130),
+		$(131),
+			$(132),
+				$(133),
+					'',
+						0
+);
