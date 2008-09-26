@@ -1,3 +1,23 @@
+/**
+ *     \file  src/wdb2sql.c
+ *    \brief  WDB Parser
+ *
+ * Copyright (C) 2008 MaNGOS foundation <http://www.getmangos.com/>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -578,7 +598,7 @@ void show_help( char *selfname ) {
 	fprintf( stderr, "		INSERT INTO cheese_templates( id, diameter, family, flavour, quality, age, texture, bouquet )\n" );
 	fprintf( stderr, "			VALUES( $(1), $(2), $(3), $(4), $(5), $(6), $(7), $(8) );\n" );
 	fprintf( stderr, "\n" );
-	fprintf( stderr, "	(Additional format files available at http://www.sourcepeek.com/wiki/Category:WDB2SQL)\n" );
+	fprintf( stderr, "	(Additional format files available at http://github.com/TheLuda/mwdb-parser/wikis)\n" );
 }
 
 int main( int argc, char **argv ) {

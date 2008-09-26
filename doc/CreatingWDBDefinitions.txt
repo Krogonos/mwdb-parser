@@ -1,0 +1,49 @@
+== Summary ==
+Definition files are plain text format files, which describe the format of a
+specific WDB file format in four blocks, giving the parser information on
+file signature, version, structure, and desired output format.
+
+== Definition file format ==
+ // A short header comment.
+ // SampleCache.wdb - WSDB - 8606
+ +signature
+ WSDB
+ +version
+ 8606
+ +wdb
+ s f s32 u32 b
+ +sql
+ INSERT INTO sample
+ (title, vector, rating, amount, flags)
+ VALUES
+ ('$(1)', $(2), $(3), $(4), $(5)
+ );
+
+As you can see, the signature must match that of the WDB file; the WDB "type".
+
+The version value must match the version of the WDB file. If these don't match,
+it's possible that the structure of the WDB file may not be compatible with the
+definition file structure. In the event that your WDB file version is newer than
+your format file, you may simply update your structure file version value to the
+WDB file version. This may work if the WDB structure hasn't changed. If it does
+not you could always play with the WDB schema string within your format file
+until it works.
+
+The SQL schema which follows the +sql tag should be self explanatory, but some
+points are worth mentioning:
+
+* All string types automatically have their apostrophes quoted.
+* This scheme line may contain several statements, and variables may be placed multiple times. 
+ 
+== Supported variable types ==
+Schema Key 	Data Type 	                Size        Notes
+s 	            String 	                    Variable    NULL-terminated character array
+b 	            BitMask                     4 bytes
+f 	            Float                       4 bytes
+u32 	        Unsigned 32-bit Integer     4 bytes     Very common
+u16 	        Unsigned 16-bit Integer     2 bytes     Probably never used
+u8 	            Unsigned 8-bit Integer      1 byte      Probably never used
+s32 	        Signed 32-bit Integer       4 bytes     Common
+s16 	        Signed 16-bit Integer       2 bytes     Probably never used
+s8 	            Signed 8-bit Integer        1 byte      Probably never used 
+
